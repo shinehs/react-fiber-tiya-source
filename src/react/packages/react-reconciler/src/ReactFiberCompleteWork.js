@@ -638,7 +638,7 @@ function completeWork(
   workInProgress: Fiber,
   renderExpirationTime: ExpirationTime,
 ): Fiber | null {
-
+  debugger
   const newProps = workInProgress.pendingProps;
   console.log(`%c '完成创建', ${workInProgress.pendingProps?workInProgress.pendingProps?.className:'RootFiber的类型-'+workInProgress.tag}`,'color:green')
   switch (workInProgress.tag) {

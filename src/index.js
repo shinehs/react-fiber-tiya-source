@@ -21,7 +21,6 @@ import * as ReactDOM from 'react-dom';
 // }
 // ReactDOM.render(<Demo/>,document.getElementById('root'));
 
-
 const demoElement = (<div className="parent">
 <div className="child1" style={{border: '4px solid green'}}>
   <div className="child1-A">A</div>
@@ -31,6 +30,8 @@ const demoElement = (<div className="parent">
   <div className="child2-C">C</div>
 </div>
 </div>)
+
+debugger
 
 ReactDOM.render(demoElement,document.getElementById('root'));
 

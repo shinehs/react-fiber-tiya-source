@@ -179,6 +179,7 @@ function legacyRenderSubtreeIntoContainer(
   forceHydrate: boolean,
   callback: ?Function,
 ) {
+  debugger
   if (__DEV__) {
     topLevelUpdateWarnings(container);
     warnOnInvalidCallback(callback === undefined ? null : callback, 'render');
@@ -288,10 +289,12 @@ export function render(
   container: Container,
   callback: ?Function,
 ) {
+  // 不要看他，他就是一个验证标签的
   invariant(
     isValidContainer(container),
     'Target container is not a DOM element.',
   );
+  // 不管排除干扰
   if (__DEV__) {
     const isModernRoot =
       isContainerMarkedAsRoot(container) &&
@@ -304,6 +307,9 @@ export function render(
       );
     }
   }
+  // 到了这发现熟悉吧？都是我们刚才说的,名字不同？ 去了解一下react版本升级源码的组织形式，他们会命名*.old.ts 文件的。
+  // 再加上18的beta版本已经提倡用concurrent模式了，所以legacy模式这里的名字就。。。。遗产了。。。。
+  debugger
   return legacyRenderSubtreeIntoContainer(
     null,
     element,
